@@ -1,7 +1,3 @@
-# Definición de constantes
-num_ubicaciones = 10
-sectores = ["A", "B", "C"]
-
 def ordenar_matriz_por_patente(registro):
     n = len(registro)
     for i in range(n):
@@ -131,6 +127,10 @@ def generar_informe(registro):
             i += 1
         print("--------------------------------------")
 
+
+# Definición de constantes
+num_ubicaciones = 10
+sectores = ["A", "B", "C"]
 # Crear lista de pisos según la entrada del usuario
 num_pisos = int(input("Ingresa la cantidad de pisos que deseas (1-10): "))
 while num_pisos < 1 or num_pisos > 10:
@@ -144,6 +144,8 @@ def generar_listapisos(num_pisos):
     return pisos
 
 pisos=generar_listapisos(num_pisos)
+
+
     
 
 # Registro de vehículos estacionados
