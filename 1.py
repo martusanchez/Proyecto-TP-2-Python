@@ -8,9 +8,10 @@ def ordenar_matriz_por_patente(registro):
         for j in range(0, n-i-1):
             # Comparar las patentes (registro[j][0] es la patente)
             if registro[j][0] > registro[j+1][0]:
+                aux= registro[j]
                 registro[j] = registro[j+1]
-                registro[j+1] = registro[j]
-    
+                registro[j+1] = aux
+    return registro   
 
 def buscar_vehiculo_2(registro, piso, letra, ubicacion):
     encontrado = False
