@@ -90,27 +90,27 @@ def registro_patente(pisos):
     
 
     # Registro de patente
-    while True:
-        patente = input("Ingresa la patente de tu vehículo (máximo 7 caracteres): ")
-        if len(patente) <= 7 and patente.isalnum():
-            break  # Salir del bucle si la patente es válida
-        print("Patente no válida. Debe contener letras y números, máximo 7 caracteres.")
+    patente = input("Ingresa la patente de tu vehículo (máximo 7 caracteres): ")
 
+    while len(patente) == 0 or len(patente) > 7:
+        print("Patente no válida. Debe tener un máximo de 7 caracteres.")
+        patente = input("Ingresa la patente de tu vehículo: ")
+
+    print("Patente registrada:", patente)
+    
     return (patente, piso, sector, ubicacion)
 
 
 
 # Función para buscar la ubicación de un vehículo por patente
 def buscar_vehiculo(patente, registro):
-    encontrado = False
     i = 0
-    while i < len(registro) and not encontrado:
+    while i < len(registro):
         if registro[i][0] == patente:
             print("Tu vehículo", patente, "está en: Piso", registro[i][1], ", Sector", registro[i][2], ",", registro[i][3])
-            encontrado = True
+            return  # Termina la función al encontrar la patente
         i += 1
-    if not encontrado:
-        print("Patente no encontrada.")
+    print("Patente no encontrada.")
 # 
 
 # Función para generar un informe de los vehículos registrados
@@ -182,3 +182,4 @@ while opcion != 5:
     opcion = int(input("Elige una opción (1-5): "))
 
 print("Saliendo del programa.")
+
