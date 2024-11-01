@@ -90,13 +90,13 @@ def registro_patente(pisos):
     
 
     # Registro de patente
-    while True:
-        patente = input("Ingresa la patente de tu vehículo (máximo 7 caracteres): ")
-        if len(patente) <= 7 and patente.isalnum():
-            break  # Salir del bucle si la patente es válida
-        print("Patente no válida. Debe contener letras y números, máximo 7 caracteres.")
+    patente = input("Ingresa la patente de tu vehículo (máximo 7 caracteres): ")
 
-    return (patente, piso, sector, ubicacion)
+    while len(patente) == 0 or len(patente) > 7:
+        print("Patente no válida. Debe tener un máximo de 7 caracteres.")
+        patente = input("Ingresa la patente de tu vehículo: ")
+
+    print("Patente registrada:", patente)
 
 
 
@@ -182,3 +182,4 @@ while opcion != 5:
     opcion = int(input("Elige una opción (1-5): "))
 
 print("Saliendo del programa.")
+
